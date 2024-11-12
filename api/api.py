@@ -1,18 +1,8 @@
-from http.server import BaseHTTPRequestHandler
-from datetime import datetime
-import json
+from fastapi import FastAPI
 
-class handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'application/json')
-        self.end_headers()
-        
-        data = {
-            "message": "API is working!",
-            "timestamp": str(datetime.now()),
-            "path": self.path
-        }
-        
-        self.wfile.write(json.dumps(data).encode())
-        return
+app = FastAPI()
+
+@app.get("/")
+async def health_check():
+    return "The health check is successful!"
+
