@@ -4,10 +4,10 @@ from auth import get_user
 router = APIRouter() 
 
 @router.get("/")
-async def get_testroute(user: dict = Depends(get_user)): 
+async def get_route(user: dict = Depends(get_user)): 
     """
-    Secure endpoint that returns user information.
-    Requires valid API key in X-API-Key header.
+    Secure endpoint that requires a valid API key in X-API-Key header.  
+    Returns user's name if API key is valid.
     """
     return user 
 
