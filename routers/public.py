@@ -9,4 +9,6 @@ async def get_testroute():
     """
     Public endpoint that returns OK status
     """
-    return "OK"
+    return {
+        "status": "OK"
+        }
