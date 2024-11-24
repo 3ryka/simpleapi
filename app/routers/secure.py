@@ -5,6 +5,10 @@ router = APIRouter()
 
 @router.get("/")
 async def get_testroute(user: dict = Depends(get_user)): 
+    """
+    Secure endpoint that returns user information.
+    Requires valid API key in X-API-Key header.
+    """
     return user 
 
 # This route is guaranteed secure, and can only be accessed by someone with a valid API key, 
