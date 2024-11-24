@@ -33,7 +33,7 @@ app.include_router(
 
 @app.get("/") #define a route (URL path that clients can use to access API)
 async def hello(): # an asynchronous (async) function; using async in fastapi makes code faster when handling many requests at the same time
-    return {"message": "Hello, welcome to the Book Cafe API!"}
+    return "Hello, welcome to the Book Cafe API!"
 
 # more about @app.get("/") 
 # @app.get means when someone visits a certain web address or path, the API is gonna do something
